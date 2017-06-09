@@ -2,7 +2,7 @@
 
 +++
 
-- A unit testing framework for testing PowerShell scripts (it's a DSL ) :frowning:
+- A unit testing framework for testing PowerShell scripts (it's a DSL )
 - Written with PowerShell
 - Included in Windows
 - Used by the PowerShell Team
@@ -52,10 +52,12 @@ Write your tests before your implementation
 ### Behavior-Driven Development (BDD)
 Write your tests in simple, natural language
 
----
++++
 
 ### AAA Pattern
 Arrange -> Act -> Assert
+
+---
 
 ## Tell Me More...
 ![](assets/willy-wonka.jpg)
@@ -209,6 +211,8 @@ Describe "Get-Number" {
 - Use help examples as your module specification
 - Design your first tests to validate those examples
 
+---
+
 ## Challenges
 
 +++
@@ -287,9 +291,16 @@ Unit tests are good, but units don't work together
 +++
 
 [Pester](https://github.com/pester/pester)
+
 [The Pester Book](https://leanpub.com/pesterbook)
+
 [Michael Sorens Blog](https://www.simple-talk.com/sysadmin/powershell/practical-powershell-unit-testing-getting-started)
+
 [PowerShell Magazine](http://www.powershellmagazine.com/tag/pester)
+
 [June Blender](https://www.youtube.com/watch?v=gssAtCeMOoo&feature=youtu.be&list=PLDCEho7foSoruQ-gL5GJw-lRkASPJOukl)
+
 [Pester Dashboard](https://github.com/doesitscript/PSPesterDashboardKickstarter)
+
 [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_6?ie=UTF8&qid=1496976520&sr=8-6&keywords=unit+testing)
+
