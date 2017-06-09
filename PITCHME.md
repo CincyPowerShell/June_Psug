@@ -2,11 +2,11 @@
 
 +++
 
-- A unit testing framework for testing PowerShell scripts (it's a DSL )
-- Written with PowerShell
-- Included in Windows
-- Used by the PowerShell Team
-- Pester is tested with Pester
+- A unit testing framework for testing PowerShell scripts (it's a DSL ) |
+- Written with PowerShell |
+- Included in Windows |
+- Used by the PowerShell Team |
+- Pester is tested with Pester |
 
 ---
 
@@ -14,9 +14,9 @@
 
 +++
 
-- Created by Scott Muc
-- Maintained by Dave Wyatt and Jakub Jares
-- First truly open-source/community software included in Windows
+- Created by Scott Muc |
+- Maintained by Dave Wyatt and Jakub Jares |
+- First truly open-source/community software included in Windows |
 
 ---
 
@@ -24,8 +24,8 @@
 
 +++
 
-- Windows does not contain the current version
-- Run `Install-Module Pester`
+- Windows does not contain the current version |
+- Run `Install-Module Pester` |
 
 ---
 
@@ -33,10 +33,10 @@
 
 +++
 
-- Methodology for programmatically testing software
-- One part of a full testing process
-- Isolates the most basic "units" of code
-- Validates the correctness of the code
+- Methodology for programmatically testing software |
+- One part of a full testing process |
+- Isolates the most basic "units" of code |
+- Validates the correctness of the code |
 
 ---
 
@@ -64,10 +64,10 @@ Arrange -> Act -> Assert
 
 +++
 
-- Find problems automatically
-- Confidence/Evidence
-- Prevent regression bugs
-- Makes code maintencance easier
+- Find problems automatically |
+- Confidence/Evidence |
+- Prevent regression bugs |
+- Makes code maintencance easier |
 
 ---
 
@@ -221,12 +221,12 @@ Describe "Get-Number" {
 
 +++
 
-- knowing what to test
-- knowing what to expect
-- edge cases
-- mocking
-- tests don't match realistic conditions
-- organizing code to fit unit tests
+- knowing what to test |
+- knowing what to expect |
+- edge cases |
+- mocking |
+- tests don't match realistic conditions |
+- organizing code to fit unit tests |
 
 +++
 
@@ -279,10 +279,10 @@ Unit tests are good, but units don't work together
 
 +++
 
-- Operational Validation/Infrastructure Testing
-- Integration Tests
-- Testing an API?
-- Anything that can be tested programmatically
+- Operational Validation/Infrastructure Testing |
+- Integration Tests |
+- Testing an API? |
+- Anything that can be tested programmatically |
 
 ---
 
