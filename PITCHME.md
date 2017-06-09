@@ -45,14 +45,17 @@
 +++
 
 ### Test-Driven Development (TDD)
+Write your tests before your implementation
 
 +++
 
 ### Behavior-Driven Development (BDD)
+Write your tests in simple, natural language
 
 ---
 
 ## Tell Me More...
+![](assets/willy-wonka.jpg)
 
 +++
 
