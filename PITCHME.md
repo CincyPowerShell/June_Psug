@@ -1,4 +1,4 @@
-# What is Pester?
+## What is Pester?
 
 +++
 
@@ -10,20 +10,26 @@
 
 ---
 
-# Pester Story
+## Pester Story
+
++++
+
 - Created by Scott Muc
 - Maintained by Dave Wyatt and Jakub Jares
 - First truly open-source/community software included in Windows
 
 ---
 
-# How to Get Pester?
+## How to Get Pester?
+
++++
+
 - Windows does not contain the current version
 - Run `Install-Module Pester`
 
 ---
 
-# What is Unit Testing?
+## What is Unit Testing?
 
 +++
 
@@ -35,12 +41,21 @@
 ---
 
 ## Concepts/Theory
-- Test-Driven Development (TDD)
-- Behavior-Driven Development (BDD)
+
++++
+
+### Test-Driven Development (TDD)
+
++++
+
+### Behavior-Driven Development (BDD)
 
 ---
 
-# Tell Me More...
+## Tell Me More...
+
++++
+
 - Find problems automatically
 - Confidence/Evidence
 - Prevent regression bugs
@@ -48,7 +63,10 @@
 
 ---
 
-# A Simple Example
+## A Simple Example
+
++++
+
 ```powershell
 Describe "Demo" {
     It "is true" {
@@ -59,7 +77,10 @@ Describe "Demo" {
 
 ---
 
-# Pester Features
+## Pester Features
+
++++
+
 - Scriptblocks
 - Assertions
 - Mocking
@@ -68,7 +89,7 @@ Describe "Demo" {
 
 ---
 
-# Scriptblocks
+## Scriptblocks
 
 +++
 
@@ -84,9 +105,9 @@ Describe "Demo" {
 
 ### Context
 
-+++
+---
 
-# Assertions
+## Assertions
 
 +++
 
@@ -114,7 +135,7 @@ Describe "Demo" {
 
 ---
 
-# Mocking
+## Mocking
 
 ---
 
@@ -126,23 +147,30 @@ Describe "Demo" {
 
 ---
 
-# Testing a Function
+## Testing a Function
 
 ---
 
-# Testing a Module
+## Testing a Module
 
 ---
 
-# Help Driven Development
-- Use help examples as your module specification
-- Design your first tests to validate those examples
-
-# Challenges
+## Help Driven Development
 
 +++
 
-## Testing is Hard!
+- Proposed by June Blender
+- Use help examples as your module specification
+- Design your first tests to validate those examples
+
+## Challenges
+
++++
+
+### Testing is Hard!
+
++++
+
 - knowing what to test
 - knowing what to expect
 - edge cases
@@ -152,38 +180,47 @@ Describe "Demo" {
 
 +++
 
-## Extra Effort
-- 3-5 times as much test code as production code
+### Extra Effort
+3-5 times as much test code as production code
 
 +++
 
-## Integration
-- unit tests are good, but units don't work together
+### Integration
+Unit tests are good, but units don't work together
 
 ---
 
-# Other Ways To Run Pester Tests
-## Continuous Integration Platforms
+## Other Ways To Run Pester Tests
+
++++
+
+### Continuous Integration Platforms
 - Appveyor
 - Team City
 - Visual Studio Team Services
 
 ---
 
-### Leveraging Your Editor
-## Visual Studio Code
+## Leveraging Your Editor
+
++++
+
+### Visual Studio Code
 - Tasks
 - Problem Matchers
 - Code Lens
 
 ---
 
-## Visual Studio
+### Visual Studio
 - Test Explorer
 
 ---
 
-# Other Uses For Pester
+## Other Uses For Pester
+
++++
+
 - Operational Validation/Infrastructure Testing
 - Integration Tests
 - Testing an API?
@@ -191,7 +228,10 @@ Describe "Demo" {
 
 ---
 
-# Links
+## Links
+
++++
+
 [Pester](https://github.com/pester/pester)
 [Pester Dashboard](https://github.com/doesitscript/PSPesterDashboardKickstarter)
 [June Blender](https://www.youtube.com/watch?v=gssAtCeMOoo&feature=youtu.be&list=PLDCEho7foSoruQ-gL5GJw-lRkASPJOukl)
