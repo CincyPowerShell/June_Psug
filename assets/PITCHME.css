@@ -1,9 +1,11 @@
-body {
-    color: #F5F5F5;
-    background-color: #012456;
-}
-
 H2, H3 {
     color: #C7E21B;
     background-color: #008080;
+    width: 100%;
+    text-align: left;
+}
+
+body {
+    color: #F5F5F5;
+    background-color: #012456;
 }
