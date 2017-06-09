@@ -2,7 +2,7 @@
 
 +++
 
-- A unit testing framework for testing PowerShell scripts (it's a DSL :frowning:)
+- A unit testing framework for testing PowerShell scripts (it's a DSL ) :frowning:
 - Written with PowerShell
 - Included in Windows
 - Used by the PowerShell Team
@@ -54,6 +54,9 @@ Write your tests in simple, natural language
 
 ---
 
+### AAA Pattern
+Arrange -> Act -> Assert
+
 ## Tell Me More...
 ![](assets/willy-wonka.jpg)
 
@@ -93,21 +96,61 @@ Describe "Demo" {
 ---
 
 ## Scriptblocks
+Define a scope for mocks, drives, and variables
 
 +++
 
 ### It
-- test cases
+Defines an assertion
+
+```powershell
+It "outputs 1" { Get-Number -Number 1 | Should Be 1 }
+```
++++
+
+### It Parameters
 - tags
+- test cases
 
 +++
 
 ### Describe
+The highest level scope for Pester (required)
+
+```powershell
+Describe "Get-Number" {
+    It "Outputs a 1" {
+        Get-Number -Number 1 | Should Be 1
+    }
+
+    It "Outputs a 2" {
+        Get-Number -Number 2 | Should Be 2
+    }
+}
+
+```
 
 +++
 
 ### Context
+A nested scope within a Describe
 
+```powershell
+Describe "Get-Number" {
+    Context "outputs numbers" {
+        It "" {
+            Get-Number -Number 1 | Should Be 1
+        }
+    }
+
+    Context "negation" {
+        It "negates a number" {
+            Get-Number -Number 1 -Negate | Should Be -1
+        }
+    }
+}
+
+```
 ---
 
 ## Assertions
@@ -118,7 +161,15 @@ Describe "Demo" {
 
 +++
 
+## Should Operators
+
++++
+
 ## Be
+
++++
+
+## BeExactly
 
 +++
 
@@ -126,7 +177,7 @@ Describe "Demo" {
 
 +++
 
-## BeExactly
+
 
 +++
 
@@ -147,14 +198,6 @@ Describe "Demo" {
 ---
 
 ## Code Coverage
-
----
-
-## Testing a Function
-
----
-
-## Testing a Module
 
 ---
 
@@ -190,6 +233,14 @@ Describe "Demo" {
 
 ### Integration
 Unit tests are good, but units don't work together
+
+---
+
+## Demo: Testing a Function
+
+---
+
+## Demo: Testing a Module
 
 ---
 
@@ -236,5 +287,9 @@ Unit tests are good, but units don't work together
 +++
 
 [Pester](https://github.com/pester/pester)
-[Pester Dashboard](https://github.com/doesitscript/PSPesterDashboardKickstarter)
+[The Pester Book](https://leanpub.com/pesterbook)
+[Michael Sorens Blog](https://www.simple-talk.com/sysadmin/powershell/practical-powershell-unit-testing-getting-started)
+[PowerShell Magazine](http://www.powershellmagazine.com/tag/pester)
 [June Blender](https://www.youtube.com/watch?v=gssAtCeMOoo&feature=youtu.be&list=PLDCEho7foSoruQ-gL5GJw-lRkASPJOukl)
+[Pester Dashboard](https://github.com/doesitscript/PSPesterDashboardKickstarter)
+[Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_6?ie=UTF8&qid=1496976520&sr=8-6&keywords=unit+testing)
