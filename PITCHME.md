@@ -67,7 +67,7 @@ Arrange -> Act -> Assert
 - Find problems automatically |
 - Confidence/Evidence |
 - Prevent regression bugs |
-- Makes code maintencance easier |
+- Makes code maintenance easier |
 
 ---
 
@@ -108,11 +108,34 @@ Defines an assertion
 ```powershell
 It "outputs 1" { Get-Number -Number 1 | Should Be 1 }
 ```
+
++++
+
+```powershell
+It -Name "outputs 1" -Test { Get-Number -Number 1 | Should Be 1 }
+``` 
+
 +++
 
 ### It Parameters
-- tags
-- test cases
+- Skip
+
+```powershell
+It "outputs 1" { Get-Number -Number 1 | Should Be 1 } -Skip
+```
+
+- TestCases
+
+```powershell
+$TestCases = @(
+    @{ num = 1 }
+    @{ num = 2 }
+)
+
+It "outputs <num>" -testcases $TestCases {
+    Get-Number -Number $num | Should Be $num
+}
+```
 
 +++
 
