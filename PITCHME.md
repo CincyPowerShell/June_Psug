@@ -163,7 +163,7 @@ A nested scope within a Describe
 ```powershell
 Describe "Get-Number" {
     Context "outputs numbers" {
-        It "" {
+        It "outputs a number" {
             Get-Number -Number 1 | Should Be 1
         }
     }
@@ -183,34 +183,47 @@ Describe "Get-Number" {
 +++
 
 ## Should
+defines an assertion
+
+```powershell
+It "outputs a number" { Get-Number -Number 1 | Should Be 1 }
+```
 
 +++
 
-## Should Operators
+### Should Operators
 
 +++
 
-## Be
+### Be
+
+equivalence assertion
 
 +++
 
-## BeExactly
+### BeExactly
+
+case-sensitive equivalence assertion
 
 +++
 
-## BeOfType
+### BeOfType
+
+output is a particular data type
 
 +++
 
++++
 
+### Match
+
+regex equivalence assertion
 
 +++
 
-## Match
+### Contain
 
-+++
-
-## Contain
+partial string match assertion
 
 ---
 
@@ -327,3 +340,4 @@ Unit tests are good, but units don't work together
 
 [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_6?ie=UTF8&qid=1496976520&sr=8-6&keywords=unit+testing)
 
+[Pester Story](http://scottmuc.com/growing-an-open-source-project-the-pester-story)
