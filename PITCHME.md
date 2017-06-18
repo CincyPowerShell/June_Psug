@@ -1,6 +1,20 @@
+# Cincinnati PowerShell User Group
+## June 2017 - Introduction to Pester
+
+---
+
+## About
+
+Matt McNabb
+mmcnabb@outlook.com
+@mcnabbmh
+https://github.com/mattmcnabb
+
 ## What is Pester?
 
 +++
+
+![](assets/Pester.png)
 
 - A unit testing framework for testing PowerShell scripts (it's a DSL ) |
 - Written with PowerShell |
@@ -25,7 +39,7 @@
 +++
 
 - Windows does not contain the current version |
-- Run `Install-Module Pester` |
+- Run `Install-Module Pester`
 
 ---
 
@@ -185,10 +199,6 @@ Describe "Get-Number" {
 ## Should
 defines an assertion
 
-```powershell
-It "outputs a number" { Get-Number -Number 1 | Should Be 1 }
-```
-
 +++
 
 ### Should Operators
@@ -199,11 +209,27 @@ It "outputs a number" { Get-Number -Number 1 | Should Be 1 }
 
 equivalence assertion
 
+```powershell
+# passes
+It "outputs a number" { Get-Number -Number 1 | Should Be 1 }
+
+# fails
+t "outputs a number" { Get-Number -Number 1 | Should Be 2 }
+```
+
 +++
 
 ### BeExactly
 
 case-sensitive equivalence assertion
+
+```powershell
+# passes
+It "matches lower" { 'string' | Should BeExactly 'string' }
+
+# fails
+It "matches upper" { 'string' | Should BeExactly 'String' }
+```
 
 +++
 
@@ -211,7 +237,13 @@ case-sensitive equivalence assertion
 
 output is a particular data type
 
-+++
+```powershell
+# passes
+It "outputs a number" { Get-Number -Number 1 | Should BeOfType [int] }
+
+# fails
+It "outputs a number" { Get-Number -Number 1 | Should BeOfType [double] }
+```
 
 +++
 
@@ -219,15 +251,39 @@ output is a particular data type
 
 regex equivalence assertion
 
+```powershell
+# passes
+It "matches super" { 'SuperMan' | Should Match 'Super' }
+
+# fails
+It "matches woman" { 'SuperMan' | Should 'Woman' }
+```
+
 +++
 
 ### Contain
 
-partial string match assertion
+text match in a file using regex
 
+```powershell
+It "contains superman" { Get-Childitem .\file.txt | Should Contain 'SuperMan' }
+```
 ---
 
 ## Mocking
+
+- isolate calling code
+- simulate the output of a command
+- prevent state change
+
+```powershell
+It "replaces text" {
+    Mock Get-Content { "The quick brown fox jumps over the lazy dog" }
+    $Result = "The quick brown ostrich jumps over the lazy dog"
+
+    Replace-Text -Path c:\temp\file.txt -ToReplace 'fox' -ReplaceWith 'ostrich' | Should Be $Result
+}
+```
 
 ---
 
