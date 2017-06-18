@@ -30,14 +30,15 @@ Describe "Get-Number" {
     )
 
     It "outputs <num>" -testcases $TestCases {
+        param ($num)
         Get-Number -Number $num | Should Be $num
     }
 
     It "outputs a number" { Get-Number -Number 1 | Should Be 2 }
 
-    It "outputs a number" { Get-Number -Number 1 | Should BeOfType [int] }
+    It "outputs type [int]" { Get-Number -Number 1 | Should BeOfType [int] }
 
-    It "outputs a number" { Get-Number -Number 1 | Should BeOfType [double] }
+    It "outputs type [double]" { Get-Number -Number 1 | Should BeOfType [double] }
 }
 
 Describe "strings" {

@@ -168,6 +168,7 @@ $TestCases = @(
 )
 
 It "outputs <num>" -testcases $TestCases {
+    param ($num)
     Get-Number -Number $num | Should Be $num
 }
 ```
@@ -258,10 +259,10 @@ output is a particular data type
 
 ```powershell
 # passes
-It "outputs a number" { Get-Number -Number 1 | Should BeOfType [int] }
+It "outputs type [int]" { Get-Number -Number 1 | Should BeOfType [int] }
 
 # fails
-It "outputs a number" { Get-Number -Number 1 | Should BeOfType [double] }
+It "outputs type [double]" { Get-Number -Number 1 | Should BeOfType [double] }
 ```
 
 +++
