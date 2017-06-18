@@ -1,5 +1,5 @@
 # Cincinnati PowerShell User Group
-## June 2017 - Introduction to Pester
+# June 2017 - Introduction to Pester
 
 ---
 
@@ -43,8 +43,18 @@
 Windows does not contain the current version
 
 ```powershell
-Install-Module Pester`
+Install-Module Pester
 ```
+
+---
+
+## How to Use Pester
+
++++
+
+- Formal: `Invoke-Pester`
+- Ad-Hoc: just run a script containing tests
+- Other: create test functions or parameterized scripts
 
 ---
 
@@ -64,12 +74,16 @@ Install-Module Pester`
 +++
 
 ### Test-Driven Development (TDD)
+
 Write your tests before your implementation
 
 +++
 
 ### Behavior-Driven Development (BDD)
+
 Write your tests in simple, natural language
+
+Black box testing
 
 +++
 
@@ -139,6 +153,8 @@ It -Name "outputs 1" -Test { Get-Number -Number 1 | Should Be 1 }
 ### It Parameters
 - Skip
 
+Don't run this test - not implented yet
+
 ```powershell
 It "outputs 1" { Get-Number -Number 1 | Should Be 1 } -Skip
 ```
@@ -171,7 +187,6 @@ Describe "Get-Number" {
         Get-Number -Number 2 | Should Be 2
     }
 }
-
 ```
 
 +++
@@ -193,7 +208,6 @@ Describe "Get-Number" {
         }
     }
 }
-
 ```
 ---
 
@@ -219,7 +233,7 @@ equivalence assertion
 It "outputs a number" { Get-Number -Number 1 | Should Be 1 }
 
 # fails
-t "outputs a number" { Get-Number -Number 1 | Should Be 2 }
+It "outputs a number" { Get-Number -Number 1 | Should Be 2 }
 ```
 
 +++
@@ -261,7 +275,7 @@ regex equivalence assertion
 It "matches super" { 'SuperMan' | Should Match 'Super' }
 
 # fails
-It "matches woman" { 'SuperMan' | Should 'Woman' }
+It "matches woman" { 'SuperMan' | Should Match 'Woman' }
 ```
 
 +++
@@ -282,21 +296,27 @@ It "contains superman" { Get-Childitem .\file.txt | Should Contain 'SuperMan' }
 - prevent state change
 
 ```powershell
-It "replaces text" {
-    Mock Get-Content { "The quick brown fox jumps over the lazy dog" }
-    $Result = "The quick brown ostrich jumps over the lazy dog"
-
-    Replace-Text -Path c:\temp\file.txt -ToReplace 'fox' -ReplaceWith 'ostrich' | Should Be $Result
-}
+Mock Get-Content { "The quick brown fox jumps over the lazy dog" }
 ```
 
 ---
 
 ## TestDrive
 
+A virtual file system for your test
+
++++
+
+- test independent of system state
+- scoped to the describe block
+- created on execution of the describe
+- destroyed when execution ends
+- referenced via the PS drive "testdrive:\"
+
 ---
 
 ## Code Coverage
+Validate that all your code is tested
 
 ---
 
@@ -328,20 +348,18 @@ It "replaces text" {
 +++
 
 ### Extra Effort
+
 3-5 times as much test code as production code
 
 +++
 
 ### Integration
+
 Unit tests are good, but units don't work together
 
 ---
 
-## Demo: Testing a Function
-
----
-
-## Demo: Testing a Module
+## Demo
 
 ---
 
