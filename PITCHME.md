@@ -40,8 +40,11 @@
 
 +++
 
-- Windows does not contain the current version |
-- Run `Install-Module Pester`
+Windows does not contain the current version
+
+```powershell
+Install-Module Pester`
+```
 
 ---
 
