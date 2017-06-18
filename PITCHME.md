@@ -5,10 +5,12 @@
 
 ## About
 
-Matt McNabb
-mmcnabb@outlook.com
-@mcnabbmh
-https://github.com/mattmcnabb
+- Matt McNabb
+- mmcnabb@outlook.com
+- @mcnabbmh
+- https://github.com/mattmcnabb
+
+---
 
 ## What is Pester?
 
