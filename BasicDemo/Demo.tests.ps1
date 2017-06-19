@@ -20,8 +20,6 @@ function Get-Number
 Describe "Get-Number" {
     It "outputs 1" { Get-Number -Number 1 | Should Be 1 }
 
-    It -Name "outputs 1" -Test { Get-Number -Number 1 | Should Be 1 }
-
     It "outputs 1" { Get-Number -Number 1 | Should Be 1 } -Skip
 
     $TestCases = @(
@@ -34,19 +32,26 @@ Describe "Get-Number" {
         Get-Number -Number $num | Should Be $num
     }
 
+    # fails
     It "outputs a number" { Get-Number -Number 1 | Should Be 2 }
 
+    # passes
     It "outputs type [int]" { Get-Number -Number 1 | Should BeOfType [int] }
 
+    # fails
     It "outputs type [double]" { Get-Number -Number 1 | Should BeOfType [double] }
 }
 
 Describe "strings" {
+    # passes
     It "matches lower" { 'string' | Should BeExactly 'string' }
 
+    # fails
     It "matches upper" { 'string' | Should BeExactly 'String' }
 
-    It "matches super" { 'SuperMan' | Should Match 'Super' }
+    # passes
+    It "matches eight chars" { 'SuperMan' | Should Match '\w{8}' }
 
-    It "matches woman" { 'SuperMan' | Should Match 'Woman' }
+    # fails
+    It "matches nine chars" { 'SuperMan' | Should Match '\w{9}' }
 }

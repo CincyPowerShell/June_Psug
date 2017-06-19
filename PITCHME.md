@@ -290,6 +290,27 @@ text match in a file using regex
 ```powershell
 It "contains superman" { .\file.txt | Should Contain 'SuperMan' }
 ```
+
++++
+
+### BeNullOrEmpty
+
+the command did not produce output
+
+```powershell
+It "is null" { $null | Should BeNullOrEmpty }
+```
+
++++
+
+### Negative Assertions
+
+Use "Not" to negate any of these assertion parameters
+
+```powershell
+It "is null" { $null | Should Not BeNullOrEmpty }
+```
+
 ---
 
 ## Mocking
