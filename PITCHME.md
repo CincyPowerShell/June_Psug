@@ -1,5 +1,5 @@
 # Cincinnati PowerShell User Group
-# June 2017 - Introduction to Pester
+<span class="primary"><strong>Introduction to Pester</strong></span> - June 2017
 
 ---
 
@@ -273,10 +273,10 @@ regex equivalence assertion
 
 ```powershell
 # passes
-It "matches super" { 'SuperMan' | Should Match 'Super' }
+It "matches super" { 'SuperMan' | Should Match '\w{8}' }
 
 # fails
-It "matches woman" { 'SuperMan' | Should Match 'Woman' }
+It "matches super" { 'SuperMan' | Should Match '\w{9}' }
 ```
 
 +++
@@ -286,7 +286,7 @@ It "matches woman" { 'SuperMan' | Should Match 'Woman' }
 text match in a file using regex
 
 ```powershell
-It "contains superman" { Get-Childitem .\file.txt | Should Contain 'SuperMan' }
+It "contains superman" { .\file.txt | Should Contain 'SuperMan' }
 ```
 ---
 
@@ -318,6 +318,15 @@ A virtual file system for your test
 
 ## Code Coverage
 Validate that all your code is tested
+
++++
+
+```powershell
+PS C:\> Invoke-Pester -Script .\script.tests.ps1 -CodeCoverage .\script.ps1
+
+Code coverage report:
+Covered 40.00 % of 30 analyzed Commands in 2 Files.
+```
 
 ---
 
