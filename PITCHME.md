@@ -1,5 +1,6 @@
 # Cincinnati PowerShell User Group
-<span class="primary"><strong>Introduction to Pester</strong></span> - June 2017
+
+<span class="primary"><strong>Introduction to Pester</strong></span> | June 2017
 
 ---
 
@@ -9,6 +10,7 @@
 - mmcnabb@outlook.com
 - @mcnabbmh
 - https://github.com/mattmcnabb
+- https://mattmcnabb.github.io
 
 ---
 
@@ -325,7 +327,7 @@ Validate that all your code is tested
 PS C:\> Invoke-Pester -Script .\script.tests.ps1 -CodeCoverage .\script.ps1
 
 Code coverage report:
-Covered 40.00 % of 30 analyzed Commands in 2 Files.
+Covered 40.00 % of 30 analyzed Commands in 1 Files.
 ```
 
 ---
@@ -365,6 +367,8 @@ Covered 40.00 % of 30 analyzed Commands in 2 Files.
 
 ### Integration
 
+![](assets/Window.gif)
+
 Unit tests are good, but units don't work together
 
 ---
@@ -396,7 +400,10 @@ Unit tests are good, but units don't work together
 ---
 
 ### Visual Studio
-- Test Explorer
+
+PowerShell Tools Test Explorer
+
+![](assets/PoshTools.png)
 
 ---
 
@@ -407,7 +414,7 @@ Unit tests are good, but units don't work together
 - Operational Validation/Infrastructure Testing |
 - Integration Tests |
 - Testing an API? |
-- Anything that can be tested programmatically |
+- Anything that can be accessed programmatically |
 
 ---
 
