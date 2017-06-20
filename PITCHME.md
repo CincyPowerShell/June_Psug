@@ -406,7 +406,7 @@ Covered 40.00 % of 30 analyzed Commands in 1 Files.
 
 ### Integration
 
-![](https://github.com/mattmcnabb/June_Psug/blob/master/assets/window.gif)
+![](assets/integration.jpg)
 
 Unit tests are good, but units don't work together
 
