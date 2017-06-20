@@ -153,6 +153,9 @@ It -Name "outputs 1" -Test { Get-Number -Number 1 | Should Be 1 }
 +++
 
 ### It Parameters
+
++++
+
 - Skip
 
 Don't run this test - not implented yet
@@ -161,7 +164,22 @@ Don't run this test - not implented yet
 It "outputs 1" { Get-Number -Number 1 | Should Be 1 } -Skip
 ```
 
++++
+
 - TestCases
+
+Instead of this
+
+```powershell
+It "outputs 1" {
+    Get-Number -Number 1 | Should Be 1
+
+It "outputs 2" {
+    Get-Number -Number 2 | Should Be 2
+}
+```
+
+Do this
 
 ```powershell
 $TestCases = @(
@@ -388,7 +406,7 @@ Covered 40.00 % of 30 analyzed Commands in 1 Files.
 
 ### Integration
 
-![](assets/Window.gif)
+![](https://github.com/mattmcnabb/June_Psug/blob/master/assets/window.gif)
 
 Unit tests are good, but units don't work together
 
@@ -407,7 +425,7 @@ Unit tests are good, but units don't work together
 - Team City
 - Visual Studio Team Services
 
----
++++
 
 ## Leveraging Your Editor
 
@@ -418,7 +436,7 @@ Unit tests are good, but units don't work together
 - Problem Matchers
 - Code Lens
 
----
++++
 
 ### Visual Studio
 
